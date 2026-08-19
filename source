@@ -638,7 +638,7 @@ Notification.Name = randomString()
 Notification.Parent = ScaledHolder
 Notification.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 Notification.BorderSizePixel = 0
-Notification.Position = UDim2.new(1, -500, 1, 20)
+Notification.Position = UDim2.new(1, -650, 1, 20)
 Notification.Size = UDim2.new(0, 250, 0, 100)
 Notification.ZIndex = 10
 table.insert(shade1,Notification)
@@ -4077,7 +4077,7 @@ function dragMain(dragpoint,gui)
 				TweenService:Create(Notification, TweenInfo.new(.20), {Position = Position}):Play()
 				pos = 250
 			else
-				local Position = UDim2.new(1, -500, Notification.Position.Y.Scale, Notification.Position.Y.Offset)
+				local Position = UDim2.new(1, -650, Notification.Position.Y.Scale, Notification.Position.Y.Offset)
 				TweenService:Create(Notification, TweenInfo.new(.20), {Position = Position}):Play()
 				pos = -250
 			end
