@@ -2,7 +2,7 @@
 
 The best command line script for roblox.
 
-[![](https://dcbadge.limes.pink/api/server/https://discord.gg/78ZuWSq)](https://discord.gg/78ZuWSq)
+[![](https://dcbadge.limes.pink/api/server/https://discord.gg/synapsex)](https://discord.gg/synapsex)
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/joustingmatch/Ouro-Yield/master/source"))()

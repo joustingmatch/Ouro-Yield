@@ -1606,7 +1606,7 @@ PluginsHint.Position = UDim2.new(0, 25, 0, 40)
 PluginsHint.Size = UDim2.new(0, 200, 0, 50)
 PluginsHint.Font = Enum.Font.SourceSansItalic
 PluginsHint.TextSize = 16
-PluginsHint.Text = "Download plugins from the IY Discord (discord.gg/78ZuWSq)"
+PluginsHint.Text = "Download plugins from the IY Discord (discord.gg/synapsex)"
 PluginsHint.TextColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextStrokeColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextWrapped = true
@@ -2883,7 +2883,7 @@ reference = (function()
 		{113,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=4,Name="Header",Parent={112},Position=UDim2.new(0,8,0,5),Size=UDim2.new(1,-8,0,20),Text="Get Further Help",TextColor3=Color3.new(1,1,1),TextSize=20,TextXAlignment=0,ZIndex=10,}},
 		{114,"TextLabel",{BackgroundColor3=Color3.new(1,1,1),BackgroundTransparency=1,Font=3,Name="Text",Parent={112},Position=UDim2.new(0,8,0,30),Size=UDim2.new(1,-8,0,32),Text="You can join the Discord server to get support with IY,  and read up on more documentation such as the Plugin API.",TextColor3=Color3.new(1,1,1),TextSize=14,TextWrapped=true,TextXAlignment=0,ZIndex=10,}},
 		{115,"Frame",{BackgroundColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),BorderSizePixel=0,Name="Line",Parent={112},Position=UDim2.new(0,10,1,-1),Size=UDim2.new(1,-20,0,1),Visible=false,ZIndex=10,}},
-		{116,"TextButton",{BackgroundColor3=Color3.new(0.48627451062202,0.61960786581039,0.85098040103912),BorderColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),Font=4,Name="InviteButton",Parent={112},Position=UDim2.new(0,5,0,75),Size=UDim2.new(1,-10,0,25),Text="Copy Discord Invite Link (https://discord.gg/78ZuWSq)",TextColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),TextSize=16,ZIndex=10,}},
+		{116,"TextButton",{BackgroundColor3=Color3.new(0.48627451062202,0.61960786581039,0.85098040103912),BorderColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),Font=4,Name="InviteButton",Parent={112},Position=UDim2.new(0,5,0,75),Size=UDim2.new(1,-10,0,25),Text="Copy Discord Invite Link (https://discord.gg/synapsex)",TextColor3=Color3.new(0.1803921610117,0.1803921610117,0.1843137294054),TextSize=16,ZIndex=10,}},
 	})
 	for i,v in pairs(main.Content.List:GetDescendants()) do
 		if v:IsA("TextLabel") then
@@ -2901,7 +2901,7 @@ reference = (function()
 	local lastPress = nil
 	inviteButton.MouseButton1Click:Connect(function()
 		if everyClipboard then
-			toClipboard("https://discord.gg/78ZuWSq")
+			toClipboard("https://discord.gg/synapsex")
 			inviteButton.Text = "Copied"
 		else
 			inviteButton.Text = "No Clipboard Function, type out the link"
@@ -2910,7 +2910,7 @@ reference = (function()
 		lastPress = pressTime
 		wait(2)
 		if lastPress ~= pressTime then return end
-		inviteButton.Text = "Copy Discord Invite Link (https://discord.gg/78ZuWSq)"
+		inviteButton.Text = "Copy Discord Invite Link (https://discord.gg/synapsex)"
 	end)
 	dragGUI(main)
 	main.Parent = ScaledHolder
@@ -3465,7 +3465,7 @@ local function buildThemeEditor()
 		o.Parent = parent
 		return o
 	end
-	local function corner(inst, r) mk("UICorner", {CornerRadius = UDim.new(0, r or 6), Parent = inst}) end
+	local function corner(inst, r) end -- squared UI
 	local function stroke(inst, col, th) mk("UIStroke", {Color = col or OUTLINE, Thickness = th or 1, ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Parent = inst}) end
 
 	local function toHex(c)
@@ -6350,10 +6350,10 @@ end)
 
 addcmd('discord', {'support', 'help'}, function(args, speaker)
 	if everyClipboard then
-		toClipboard('https://discord.com/invite/78ZuWSq')
-		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/78ZuWSq')
+		toClipboard('https://discord.com/invite/synapsex')
+		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/synapsex')
 	else
-		notify('Discord Invite', 'discord.gg/78ZuWSq')
+		notify('Discord Invite', 'discord.gg/synapsex')
 	end
 	if httprequest then
 		httprequest({
@@ -6366,9 +6366,19 @@ addcmd('discord', {'support', 'help'}, function(args, speaker)
 			Body = HttpService:JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = HttpService:GenerateGUID(false),
-				args = {code = '78ZuWSq'}
+				args = {code = 'synapsex'}
 			})
 		})
+	end
+end)
+
+addcmd('ouroboros', {'ouro'}, function(args, speaker)
+	notify('Ouroboros', 'Loading Ouroboros...')
+	local ok, err = pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/joustingmatch/Ouroboros/main/loader.lua"))()
+	end)
+	if not ok then
+		notify('Ouroboros', 'Failed to load: '..tostring(err))
 	end
 end)
 
@@ -12926,15 +12936,9 @@ Scale:GetPropertyChangedSignal("Scale"):Connect(function()
 	end
 end)
 
--- Ouro Yield: Obsidian-style rounded corners + accent outline
+-- Ouro Yield: squared UI with accent outline
 do
 	local accentOutline = Color3.fromRGB(40, 40, 40)
-	local function round(inst, radius)
-		local c = Instance.new("UICorner")
-		c.CornerRadius = UDim.new(0, radius or 6)
-		c.Parent = inst
-		return c
-	end
 	local function outline(inst, color, thickness)
 		local s = Instance.new("UIStroke")
 		s.Color = color or accentOutline
@@ -12943,11 +12947,8 @@ do
 		s.Parent = inst
 		return s
 	end
-	round(Holder, 6); outline(Holder)
-	round(Title, 6)
-	round(Dark, 6)
-	round(Settings, 6); outline(Settings)
-	round(Cmdbar, 5)
+	outline(Holder)
+	outline(Settings)
 end
 
 updateColors(currentShade1,shade1)
@@ -13196,19 +13197,9 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-    task.wait()
-    pcall(function()
-        Credits:TweenPosition(UDim2.new(0, 0, 0.9, 0), "Out", "Quart", 0.2)
-        Logo:TweenSizeAndPosition(UDim2.new(0, 175, 0, 175), UDim2.new(0, 112, 0, 45), "Out", "Quart", 0.3)
-        task.wait(1)
-        local OutInfo = TweenInfo.new(1.6809, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0)
-        TweenService:Create(Logo, OutInfo, {ImageTransparency = 1}):Play()
-        TweenService:Create(IntroBackground, OutInfo, {BackgroundTransparency = 1}):Play()
-        Credits:TweenPosition(UDim2.new(0, 0, 0.9, 30), "Out", "Quart", 0.2)
-        task.wait(0.2)
-    end)
-    Logo:Destroy()
-    Credits:Destroy()
-    IntroBackground:Destroy()
+    -- Loading screen removed
+    pcall(function() Logo:Destroy() end)
+    pcall(function() Credits:Destroy() end)
+    pcall(function() IntroBackground:Destroy() end)
     minimizeHolder()
 end)
