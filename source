@@ -343,8 +343,8 @@ Holder.Parent = ScaledHolder
 Holder.Active = true
 Holder.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
 Holder.BorderSizePixel = 0
-Holder.Position = UDim2.new(1, -250, 1, -220)
-Holder.Size = UDim2.new(0, 250, 0, 220)
+Holder.Position = UDim2.new(1, -400, 1, -220)
+Holder.Size = UDim2.new(0, 400, 0, 220)
 Holder.ZIndex = 10
 table.insert(shade2,Holder)
 
@@ -353,10 +353,10 @@ Title.Parent = Holder
 Title.Active = true
 Title.BackgroundColor3 = Color3.fromRGB(36,36,37)
 Title.BorderSizePixel = 0
-Title.Size = UDim2.new(0, 250, 0, 20)
+Title.Size = UDim2.new(0, 400, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "Infinite Yield FE v" .. currentVersion
+Title.Text = "Ouro Yield v" .. currentVersion
 
 do
 	local emoji = ({
@@ -399,7 +399,7 @@ Dark.Active = true
 Dark.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 Dark.BorderSizePixel = 0
 Dark.Position = UDim2.new(0, 0, 0, 45)
-Dark.Size = UDim2.new(0, 250, 0, 175)
+Dark.Size = UDim2.new(0, 400, 0, 175)
 Dark.ZIndex = 10
 table.insert(shade1,Dark)
 
@@ -408,7 +408,7 @@ Cmdbar.Parent = Holder
 Cmdbar.BackgroundTransparency = 1
 Cmdbar.BorderSizePixel = 0
 Cmdbar.Position = UDim2.new(0, 5, 0, 20)
-Cmdbar.Size = UDim2.new(0, 240, 0, 25)
+Cmdbar.Size = UDim2.new(0, 390, 0, 25)
 Cmdbar.Font = Enum.Font.SourceSans
 Cmdbar.TextSize = 18
 Cmdbar.TextXAlignment = Enum.TextXAlignment.Left
@@ -422,7 +422,7 @@ CMDsF.Parent = Holder
 CMDsF.BackgroundTransparency = 1
 CMDsF.BorderSizePixel = 0
 CMDsF.Position = UDim2.new(0, 5, 0, 45)
-CMDsF.Size = UDim2.new(0, 245, 0, 175)
+CMDsF.Size = UDim2.new(0, 395, 0, 175)
 CMDsF.ScrollBarImageColor3 = Color3.fromRGB(78,78,79)
 CMDsF.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
 CMDsF.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -438,7 +438,7 @@ cmdListLayout.Parent = CMDsF
 SettingsButton.Name = "SettingsButton"
 SettingsButton.Parent = Holder
 SettingsButton.BackgroundTransparency = 1
-SettingsButton.Position = UDim2.new(0, 230, 0, 0)
+SettingsButton.Position = UDim2.new(0, 380, 0, 0)
 SettingsButton.Size = UDim2.new(0, 20, 0, 20)
 SettingsButton.Image = getcustomasset("infiniteyield/assets/settings.png")
 SettingsButton.ZIndex = 10
@@ -447,7 +447,7 @@ ReferenceButton = Instance.new("ImageButton")
 ReferenceButton.Name = "ReferenceButton"
 ReferenceButton.Parent = Holder
 ReferenceButton.BackgroundTransparency = 1
-ReferenceButton.Position = UDim2.new(0, 212, 0, 2)
+ReferenceButton.Position = UDim2.new(0, 362, 0, 2)
 ReferenceButton.Size = UDim2.new(0, 16, 0, 16)
 ReferenceButton.Image = getcustomasset("infiniteyield/assets/reference.png")
 ReferenceButton.ZIndex = 10
@@ -458,7 +458,7 @@ Settings.Active = true
 Settings.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 Settings.BorderSizePixel = 0
 Settings.Position = UDim2.new(0, 0, 0, 220)
-Settings.Size = UDim2.new(0, 250, 0, 175)
+Settings.Size = UDim2.new(0, 400, 0, 175)
 Settings.ZIndex = 10
 table.insert(shade1,Settings)
 
@@ -591,7 +591,7 @@ table.insert(shade3,Button)
 
 On.Name = "On"
 On.Parent = Button
-On.BackgroundColor3 = Color3.fromRGB(150, 150, 151)
+On.BackgroundColor3 = Color3.fromRGB(125, 85, 255)
 On.BackgroundTransparency = 1
 On.BorderSizePixel = 0
 On.Position = UDim2.new(0, 2, 0, 2)
@@ -745,17 +745,17 @@ table.insert(text1,Description)
 IntroBackground.Name = "IntroBackground"
 IntroBackground.Parent = Holder
 IntroBackground.Active = true
-IntroBackground.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
+IntroBackground.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 IntroBackground.BorderSizePixel = 0
 IntroBackground.Position = UDim2.new(0, 0, 0, 45)
-IntroBackground.Size = UDim2.new(0, 250, 0, 175)
+IntroBackground.Size = UDim2.new(0, 400, 0, 175)
 IntroBackground.ZIndex = 10
 
 Logo.Name = "Logo"
 Logo.Parent = Holder
 Logo.BackgroundTransparency = 1
 Logo.BorderSizePixel = 0
-Logo.Position = UDim2.new(0, 125, 0, 127)
+Logo.Position = UDim2.new(0, 200, 0, 127)
 Logo.Size = UDim2.new(0, 10, 0, 10)
 Logo.Image = getcustomasset("infiniteyield/assets/logo.png")
 Logo.ImageTransparency = 0
@@ -766,7 +766,7 @@ Credits.Parent = Holder
 Credits.BackgroundTransparency = 1
 Credits.BorderSizePixel = 0
 Credits.Position = UDim2.new(0, 0, 0.9, 30)
-Credits.Size = UDim2.new(0, 250, 0, 20)
+Credits.Size = UDim2.new(0, 400, 0, 20)
 Credits.Font = Enum.Font.SourceSansLight
 Credits.FontSize = Enum.FontSize.Size14
 Credits.Text = "Edge // Zwolf // Moon // Toon // Peyton // ATP"
@@ -1101,7 +1101,7 @@ table.insert(shade3,Button_2)
 
 On_2.Name = "On"
 On_2.Parent = Button_2
-On_2.BackgroundColor3 = Color3.fromRGB(150, 150, 151)
+On_2.BackgroundColor3 = Color3.fromRGB(125, 85, 255)
 On_2.BackgroundTransparency = 1
 On_2.BorderSizePixel = 0
 On_2.Position = UDim2.new(0, 2, 0, 2)
@@ -2920,12 +2920,13 @@ reference = (function()
 	end)
 end)()
 
-currentShade1 = Color3.fromRGB(36, 36, 37)
-currentShade2 = Color3.fromRGB(46, 46, 47)
-currentShade3 = Color3.fromRGB(78, 78, 79)
-currentText1 = Color3.new(1, 1, 1)
-currentText2 = Color3.new(0, 0, 0)
-currentScroll = Color3.fromRGB(78,78,79)
+-- Ouro Yield theme (Obsidian palette)
+currentShade1 = Color3.fromRGB(15, 15, 15)   -- BackgroundColor (deep panels)
+currentShade2 = Color3.fromRGB(25, 25, 25)   -- MainColor (body)
+currentShade3 = Color3.fromRGB(48, 48, 48)   -- controls
+currentText1 = Color3.fromRGB(255, 255, 255)
+currentText2 = Color3.fromRGB(235, 235, 235) -- control text (dark controls now)
+currentScroll = Color3.fromRGB(125, 85, 255) -- AccentColor
 
 defaultGuiScale = IsOnMobile and 0.9 or 1
 defaultsettings = {
@@ -13124,6 +13125,30 @@ Scale:GetPropertyChangedSignal("Scale"):Connect(function()
 	end
 end)
 
+-- Ouro Yield: Obsidian-style rounded corners + accent outline
+do
+	local accentOutline = Color3.fromRGB(40, 40, 40)
+	local function round(inst, radius)
+		local c = Instance.new("UICorner")
+		c.CornerRadius = UDim.new(0, radius or 6)
+		c.Parent = inst
+		return c
+	end
+	local function outline(inst, color, thickness)
+		local s = Instance.new("UIStroke")
+		s.Color = color or accentOutline
+		s.Thickness = thickness or 1
+		s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		s.Parent = inst
+		return s
+	end
+	round(Holder, 6); outline(Holder)
+	round(Title, 6)
+	round(Dark, 6)
+	round(Settings, 6); outline(Settings)
+	round(Cmdbar, 5)
+end
+
 updateColors(currentShade1,shade1)
 updateColors(currentShade2,shade2)
 updateColors(currentShade3,shade3)
@@ -13373,7 +13398,7 @@ task.spawn(function()
     task.wait()
     pcall(function()
         Credits:TweenPosition(UDim2.new(0, 0, 0.9, 0), "Out", "Quart", 0.2)
-        Logo:TweenSizeAndPosition(UDim2.new(0, 175, 0, 175), UDim2.new(0, 37, 0, 45), "Out", "Quart", 0.3)
+        Logo:TweenSizeAndPosition(UDim2.new(0, 175, 0, 175), UDim2.new(0, 112, 0, 45), "Out", "Quart", 0.3)
         task.wait(1)
         local OutInfo = TweenInfo.new(1.6809, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0)
         TweenService:Create(Logo, OutInfo, {ImageTransparency = 1}):Play()
